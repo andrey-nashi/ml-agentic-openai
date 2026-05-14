@@ -1,0 +1,29 @@
+agent:
+  name: image-tagger
+  model: gpt-4.1-mini
+  instructions: |
+    You are assistant for creating tags for the given image.
+    Given an image, create useful detailed tags for serach, cataloging, retrieval.
+    Be specific and detailed, mention objects, location, colors, mood, style composition and use cases.
+    If possible determine name of the location, some distinct points.
+    Return ONLY valid JSON in the following format:
+
+    {
+      "objects": [],
+      "scene": [],
+      "style": [],
+      "colors": [],
+      "mood": [],
+      "location": [],
+      "features": [],
+      "search_tags": []
+    }
+
+user:
+  role: user
+  content: 
+    - type: input_image
+      file_id: file_id
+    - type: input_text
+      text: |
+        Generate tags for this image 
