@@ -1,0 +1,31 @@
+agent:
+  name: image-tagger
+  model: gpt-4.1-mini
+  instructions: |
+    You are a helpfull assistant. 
+    You answer the question user asks.
+
+    If user asks to get info regarding stocks - call function get_stock, pass stock name
+    If user asks about the weather - call function get_weather, pass the location name 
+
+weather_db:
+  tokyo: 
+    sky: sunny
+    temperature: 20
+  osaka:
+    sky: cloudy
+    temperature: 10
+  kyoto:
+    sky: rainy
+    temperature: 12
+
+stock_db:
+  nvidia: 
+    current: 800
+    close: 300
+  micron:
+    current: 2000
+    close: 1990
+  googl:
+    current: 150
+    close: 160
